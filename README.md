@@ -16,7 +16,7 @@ Pre-Requisites
 Basic Build and Usage
 ---------------------
 
-* *Clone*: git clone git@github.com:pnayak/tasks.git
+* *Clone*: git clone git@github.com:pnayak/todos.git
 * *Build*: mvn clean compile package
 * *Run*:   
     * java -jar todos-service/target/todos-service.jar server todos-service/todos-service.yaml
@@ -25,14 +25,16 @@ Basic Build and Usage
         * curl http://localhost:8080/about
         * curl http://localhost:8081/healthcheck
         * curl http://localhost:8081/metrics
-    * *task*
+    * *Tasks*
         * The URI is of the form /task
-        * *Add*: curl -H "Content-Type: application/json" -XPUT http://localhost:8080/task -i -d '{"title" : "Get Milk" }' // Creates with auto-generated UUID = 50b7b169da064d15987eab4c 
+        * *Add*: curl -H "Content-Type: application/json" -XPUT http://localhost:8080/tasks -i -d '{"title" : "Get Milk" }' // Creates with auto-generated UUID = 50b7b169da064d15987eab4c 
         * *Fetch one*: curl -XGET
-          http://localhost:8080/task/50b7b169da064d15987eab4c
-        * *Fetch all*: curl -XGET http://localhost:8080/task
+          http://localhost:8080/tasks/50b7b169da064d15987eab4c
+        * *Fetch all*: curl -XGET http://localhost:8080/tasks
+        * *Delete*: curl -i -XDELETE http://localhost:8080/tasks/50b7b169da064d15987eab4c
         * *Search*: curl -XGET localhost:9200/task/_search?pretty=true -d '{"query" : {"term" : {"title" : "Milk"}}}'
-        * *Delete*: curl -i -XDELETE http://localhost:8080/task/50b7b169da064d15987eab4c
+     * *Users*
+        * Same as above, just use the URI /users
 * Rock On!
 
 Development

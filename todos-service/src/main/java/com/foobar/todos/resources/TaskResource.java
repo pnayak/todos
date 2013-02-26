@@ -22,7 +22,7 @@ import com.foobar.todos.elasticsearch.ElasticSearchIndex;
  * 
  */
 @Component
-@Path("/task")
+@Path("/tasks")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class TaskResource extends BaseResource<Task> {

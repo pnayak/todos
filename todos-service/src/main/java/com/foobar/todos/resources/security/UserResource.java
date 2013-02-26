@@ -37,7 +37,7 @@ import com.yammer.metrics.annotation.Timed;
  * 
  */
 @Component
-@Path("/user")
+@Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserResource extends BaseResource<User> {
