@@ -16,11 +16,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import com.foobar.todos.KnowledgeServiceConfiguration;
-import com.foobar.todos.api.Entity;
+import com.foobar.todos.ToDoServiceConfiguration;
+import com.foobar.todos.api.Task;
+import com.foobar.todos.api.security.User;
 
 /**
- * COPYRIGHT (C) 2012 Pragya Systems. All Rights Reserved.
  * 
  * @author Prashant Nayak (pnayak)
  * 
@@ -33,7 +33,7 @@ public class ElasticSearchConfigModule {
 			.getLogger(ElasticSearchConfigModule.class);
 
 	@Autowired
-	protected KnowledgeServiceConfiguration configuration;
+	protected ToDoServiceConfiguration configuration;
 
 	@Bean
 	@Scope("singleton")
@@ -81,10 +81,19 @@ public class ElasticSearchConfigModule {
 	}
 
 	@Bean
-	protected ElasticSearchIndex<Entity> elasticSearchIndexForEntity() {
-		ElasticSearchIndex<Entity> esi = new ElasticSearchIndex<Entity>(
-				Entity.class, client());
-		LOG.debug("*** Initialized ElasticSearch Entity index with CLUSTER client "
+	protected ElasticSearchIndex<Task> elasticSearchIndexForTask() {
+		ElasticSearchIndex<Task> esi = new ElasticSearchIndex<Task>(
+				Task.class, client());
+		LOG.debug("*** Initialized ElasticSearch Task index with CLUSTER client "
+				+ esi);
+		return esi;
+	}
+	
+	@Bean
+	protected ElasticSearchIndex<User> elasticSearchIndexForUser() {
+		ElasticSearchIndex<User> esi = new ElasticSearchIndex<User>(
+				User.class, client());
+		LOG.debug("*** Initialized ElasticSearch User index with CLUSTER client "
 				+ esi);
 		return esi;
 	}

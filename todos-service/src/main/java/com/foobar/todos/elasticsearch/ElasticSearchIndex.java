@@ -44,7 +44,6 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
 /**
- * COPYRIGHT (C) 2012 Pragya Systems. All Rights Reserved.
  * 
  * @author Prashant Nayak (pnayak)
  * 

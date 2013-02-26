@@ -16,13 +16,12 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.foobar.todos.KnowledgeServiceConfiguration;
+import com.foobar.todos.ToDoServiceConfiguration;
 import com.mongodb.Mongo;
 import com.mongodb.MongoException;
 import com.mongodb.MongoOptions;
 
 /**
- * COPYRIGHT (C) 2012 Pragya Systems. All Rights Reserved.
  * 
  * @author Prashant Nayak (pnayak)
  * 
@@ -35,10 +34,10 @@ public class MongoDbConfigModule extends AbstractMongoConfiguration {
 	private static final Logger LOG =  LoggerFactory
 			.getLogger(MongoDbConfigModule.class);
 
-	private String DATABASE_NAME = "knowledgeHub";
+	private String DATABASE_NAME = "todos";
 
 	@Autowired
-	protected KnowledgeServiceConfiguration configuration;
+	protected ToDoServiceConfiguration configuration;
 
 	/*
 	 * (non-Javadoc)
@@ -97,10 +96,6 @@ public class MongoDbConfigModule extends AbstractMongoConfiguration {
 	 */
 	@Override
 	public SimpleMongoDbFactory mongoDbFactory() throws Exception {
-		// UserCredentials userCredentials = new UserCredentials("joe",
-		// "secret");
-		// return new SimpleMongoDbFactory(new Mongo(), "database",
-		// userCredentials);
 		SimpleMongoDbFactory factory = new SimpleMongoDbFactory(mongo(),
 				getDatabaseName());
 		return factory;
@@ -133,7 +128,7 @@ public class MongoDbConfigModule extends AbstractMongoConfiguration {
 	 */
 	@Override
 	public String getMappingBasePackage() {
-		return "com.pragyasystems.knowledgeHub.db";
+		return "com.foobar.todos.db";
 	}
 
 	/*

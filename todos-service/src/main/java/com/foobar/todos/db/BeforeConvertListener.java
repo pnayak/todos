@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.foobar.todos.api.Entity;
 
 /**
- * COPYRIGHT (C) 2012 Pragya Systems. All Rights Reserved.
+ * Common behavior before saving any Entity
  * 
  * @author Prashant Nayak (pnayak)
  * 
