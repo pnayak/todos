@@ -1,1 +1,1 @@
-java -jar knowledgeHub-service/target/knowledgeHub-service.jar server knowledgeHub-service/knowledgeHub-service.yaml
+java -jar todos-service/target/todos-service.jar server todos-service/todos-service.yaml
