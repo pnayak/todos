@@ -1,0 +1,38 @@
+package csvuploader;
+
+import Database.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+/**
+ * 
+ * @author durgesh.yadav
+ */
+public class CSVUploaderUtil {
+
+    private static String query = "insert into hockey_players ("
+            + "team_id, "
+            + "player_number, "
+            + "player_name, "
+            + "Player_lastname, "
+            + "player_position, "
+            + "active "
+            + ") values (?,?,?,?,?,?);";
+
+    public static void saveCSVFields(int teamId, String[] csvFields) throws Exception {
+        System.out.println("You are uplaoding from the file");
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement prep = con.prepareStatement(query);
+        prep.setInt(1, teamId);
+        prep.setString(2, csvFields[0]);
+        prep.setString(3, csvFields[1]);
+        prep.setString(4, csvFields[2]);
+        prep.setString(5, csvFields[3]);
+        prep.setString(6, csvFields[4]);         
+        prep.addBatch();
+        con.setAutoCommit(false);
+        prep.executeBatch();
+        con.setAutoCommit(true);
+        con.close();     
+    }
+}
