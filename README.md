@@ -1,4 +1,4 @@
-Todos Sample Dropwizard Project
+tasks Sample Dropwizard Project
 =============
 
 A sample Dropwizard Project.
@@ -15,23 +15,23 @@ Pre-Requisites
 Basic Build and Usage
 ---------------------
 
-* *Clone*: git clone git@github.com:pnayak/todos.git
+* *Clone*: git clone git@github.com:pnayak/tasks.git
 * *Build*: mvn clean compile package
 * *Run*:   
-    * java -jar todos-service/target/todos-service.jar server todos-service/todos-service.yaml
+    * java -jar tasks-service/target/tasks-service.jar server tasks-service/tasks-service.yaml
 * *Verify*: 
     * *Basic/admin services*
         * curl http://localhost:8080/about
         * curl http://localhost:8081/healthcheck
         * curl http://localhost:8081/metrics
-    * *ToDo*
-        * The URI is of the form /todo
-        * *Add*: curl -H "Content-Type: application/json" -XPUT http://localhost:8080/todo -i -d '{"title" : "Get Milk" }' // Creates with auto-generated UUID = 50b7b169da064d15987eab4c 
+    * *task*
+        * The URI is of the form /task
+        * *Add*: curl -H "Content-Type: application/json" -XPUT http://localhost:8080/task -i -d '{"title" : "Get Milk" }' // Creates with auto-generated UUID = 50b7b169da064d15987eab4c 
         * *Fetch one*: curl -XGET
-          http://localhost:8080/todo/50b7b169da064d15987eab4c
-        * *Fetch all*: curl -XGET http://localhost:8080/todo
-        * *Search*: curl -XGET localhost:9200/learningcontent/_search?pretty=true -d '{"query" : {"term" : {"title" : "Milk"}}}'
-        * *Delete*: curl -i -XDELETE http://localhost:8080/todo/50b7b169da064d15987eab4c
+          http://localhost:8080/task/50b7b169da064d15987eab4c
+        * *Fetch all*: curl -XGET http://localhost:8080/task
+        * *Search*: curl -XGET localhost:9200/task/_search?pretty=true -d '{"query" : {"term" : {"title" : "Milk"}}}'
+        * *Delete*: curl -i -XDELETE http://localhost:8080/task/50b7b169da064d15987eab4c
 * Rock On!
 
 Development
