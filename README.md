@@ -18,7 +18,7 @@ Basic Build and Usage
 * *Clone*: git clone git@github.com:pnayak/tasks.git
 * *Build*: mvn clean compile package
 * *Run*:   
-    * java -jar tasks-service/target/tasks-service.jar server tasks-service/tasks-service.yaml
+    * java -jar todos-service/target/todos-service.jar server todos-service/todos-service.yaml
 * *Verify*: 
     * *Basic/admin services*
         * curl http://localhost:8080/about

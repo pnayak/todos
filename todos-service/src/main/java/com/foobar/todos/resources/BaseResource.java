@@ -38,7 +38,7 @@ import com.yammer.metrics.annotation.Timed;
 
 /**
  * 
- * @author Prashant Nayak (pnayak)
+ * @Author Prashant Nayak (pnayak)
  * 
  *         The base resource providing base implementation of all basic CRUD
  *         services. Each method has a before and after method that sub-classes
@@ -65,7 +65,7 @@ public abstract class BaseResource<T extends Entity> {
 	@GET
 	@Path("/{uuid}")
 	@Timed
-	public T findOne(@Auth User user, @PathParam("uuid") String uuid) {
+	public T findOne(@Auth(required = false) User user, @PathParam("uuid") String uuid) {
 
 		if (uuid == null) {
 			throw new WebApplicationException(Status.BAD_REQUEST);
@@ -95,7 +95,7 @@ public abstract class BaseResource<T extends Entity> {
 
 	@GET
 	@Timed
-	public Iterable<T> findAll(@Auth User user,
+	public Iterable<T> findAll(@Auth(required = false) User user,
 			@QueryParam("page") @DefaultValue("0") IntParam page,
 			@QueryParam("count") @DefaultValue("20") IntParam count) {
 
@@ -131,7 +131,7 @@ public abstract class BaseResource<T extends Entity> {
 
 	@PUT
 	@Timed
-	public Response add(@Auth User user, @Valid T providedEntity) {
+	public Response add(@Auth(required = false) User user, @Valid T providedEntity) {
 
 		// NOTE: It is left to the sub-classing resource to validate/use
 		// the parentSpaceId. It is included here since most of our add's
@@ -310,7 +310,7 @@ public abstract class BaseResource<T extends Entity> {
 	@DELETE
 	@Path("/{uuid}")
 	@Timed
-	public Response delete(@Auth User user, @PathParam("uuid") String uuid) {
+	public Response delete(@Auth(required = false) User user, @PathParam("uuid") String uuid) {
 
 		if (uuid == null) {
 			throw new WebApplicationException(Status.BAD_REQUEST);
