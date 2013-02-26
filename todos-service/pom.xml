@@ -20,7 +20,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<mainClass>com.foobar.todos.KnowledgeService</mainClass>
+		<mainClass>com.foobar.todos.ToDoService</mainClass>
 		<!-- <mainClass>com.hmsonline.dropwizard.spring.SpringService</mainClass> -->
 	</properties>
 

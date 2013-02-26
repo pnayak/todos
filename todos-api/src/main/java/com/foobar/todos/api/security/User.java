@@ -3,7 +3,6 @@
  */
 package com.foobar.todos.api.security;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.foobar.todos.api.Entity;
@@ -17,18 +16,8 @@ import com.foobar.todos.api.Entity;
 @Document
 public class User extends Entity {
 
-	@Id
-	private String uuid;
-	private String username;
+    private String username;
 	private String password;
-
-	public String getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
 
 	public String getUsername() {
 		return username;

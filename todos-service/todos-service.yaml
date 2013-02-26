@@ -1,4 +1,4 @@
-kserviceId: Pragya1
+kserviceId: ToDo Service
 
 mongoServer: localhost
 
@@ -20,12 +20,12 @@ logging:
   loggers:
 
     # Sets the level for 'com.example.app' to DEBUG.
-    com.pragyasystems.knowledgeHub.api: DEBUG
-    com.pragyasystems.knowledgeHub.resources: DEBUG
-    com.pragyasystems.knowledgeHub.resources.measure: DEBUG
-    com.pragyasystems.knowledgeHub.util: DEBUG
-    com.pragyasystems.knowledgeHub.security: DEBUG
-    com.pragyasystems.knowledgeHub.db: DEBUG
+    com.foobar.todos.api: DEBUG
+    com.foobar.todos.resources: DEBUG
+    com.foobar.todos.resources.measure: DEBUG
+    com.foobar.todos.util: DEBUG
+    com.foobar.todos.security: DEBUG
+    com.foobar.todos.db: DEBUG
 
   # Settings for logging to stdout.
   console:
