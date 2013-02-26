@@ -1,7 +1,8 @@
-tasks Sample Dropwizard Project
+ToDo's Sample Dropwizard Project
 =============
 
-A sample Dropwizard Project.
+A sample Dropwizard Project.  Setup to use DropWizard with Spring Data for MongoDB and ElasticSearch.
+Allows the following to be CRUD'd:  Users and Tasks.  Also supports basic healthchecks and metrics.
 
 Pre-Requisites
 --------------
